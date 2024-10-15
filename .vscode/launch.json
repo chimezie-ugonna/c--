@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+      {
+        "name": "C++ Launch (clang++)",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/hello_world",  // Path to the executable (adjust if needed)
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",  // Sets the working directory
+        "environment": [],
+        "externalConsole": false,  // Uses VS Code's internal terminal
+        "MIMode": "lldb",
+        "preLaunchTask": "build",  // Specifies the build task
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for lldb",
+            "text": "settings set target.x86-disassembly-flavor intel",
+            "ignoreFailures": true
+          }
+        ],
+        "logging": { "engineLogging": true },
+        "targetArchitecture": "arm64",  // Architecture for Apple silicon
+        "osx": {
+          "MIMode": "lldb"  // macOS debugger mode
+        }
+      }
+    ]
+  }
